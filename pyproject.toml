@@ -1,0 +1,18 @@
+[project]
+name = "float-chat"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "flask>=3.1.2",
+    "langchain-chroma>=0.2.6",
+    "langchain-huggingface>=0.3.1",
+    "langchain-ollama>=0.3.8",
+    "netcdf4>=1.7.2",
+    "ollama>=0.5.4",
+    "pandas>=2.3.2",
+    "plotly>=6.3.0",
+    "sqlalchemy>=2.0.43",
+    "xarray>=2025.9.0",
+]

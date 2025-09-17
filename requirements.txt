@@ -1,0 +1,12 @@
+flask
+pandas
+sqlalchemy
+ollama
+xarray
+netcdf4
+plotly
+langchain
+langchain-community
+chromadb
+sentence-transformers
+langchain-groq

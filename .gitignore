@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.eggs/
+
+# Database Files
+*.db
+*.sqlite3
+
+# Vector Store
+chroma_db/
+
+# ARGO Data Files
+*.nc
+
+# API Keys & Secrets
+api-key
+.env
+
+# IDE and OS specific
+.vscode/
+.idea/
+.DS_Store
