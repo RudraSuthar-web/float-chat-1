@@ -14,5 +14,6 @@ dependencies = [
     "pandas>=2.3.2",
     "plotly>=6.3.0",
     "sqlalchemy>=2.0.43",
+    "thefuzz>=0.22.1",
     "xarray>=2025.9.0",
 ]

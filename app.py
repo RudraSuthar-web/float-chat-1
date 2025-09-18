@@ -9,12 +9,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    """Serves the landing page."""
     return send_from_directory('static', 'index.html')
 
 @app.route('/dashboard')
 def dashboard():
-    """Serves the main chat dashboard."""
     return render_template('dashboard.html')
 
 @app.route('/chat', methods=['POST'])
@@ -25,12 +23,11 @@ def chat():
 
     sql_query = ""
     try:
-        # Step 1: Generate SQL Query
-        sql_query = backend.generate_sql_query_with_rag(user_question)
+        # --- THIS LINE HAS CHANGED ---
+        sql_query = backend.get_sql_query(user_question)
+        # --------------------------
 
-        # Step 2: Execute the query
         result_df = backend.execute_sql_query(sql_query)
-
         response_payload = {'sql_query': sql_query}
 
         if result_df.empty:
@@ -40,11 +37,9 @@ def chat():
             })
             return jsonify(response_payload)
 
-        # Step 3: Generate a summary of the results
         summary = backend.generate_summary(user_question, result_df)
         response_payload['summary'] = summary
 
-        # Step 4: Determine visualization type and generate plot/data
         viz_suggestion = backend.get_visualization_suggestion(result_df)
 
         if viz_suggestion == 'map':
