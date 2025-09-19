@@ -10,3 +10,5 @@ langchain-community
 chromadb
 sentence-transformers
 langchain-groq
+langchain-huggingface
+langchain-chroma
